@@ -1,10 +1,10 @@
-from flask import Blueprint
+from flask import Blueprint, render_template
 
 bp = Blueprint('agenda', __name__)
 
 @bp.route('/agenda')
 def tela_inicial():
-    return "Tela Inicial"
+    return render_template('tela_inicial.html')
 
 @bp.route('/agenda/funcionario')
 def selecionar_funcionario():
