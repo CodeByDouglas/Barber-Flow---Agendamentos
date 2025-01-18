@@ -67,14 +67,73 @@ tests/
 - **run.py**: Ponto de entrada da aplicação. Inicializa e executa a aplicação Flask.
 - **tests/**: Diretório para arquivos de teste.
 
+## Comandos Úteis
+
+### Docker Compose
+
+- **Subir os contêineres**:
+
+  ```sh
+  docker-compose up -d
+  ```
+
+- **Desmontar os contêineres**:
+
+  ```sh
+  docker-compose down
+  ```
+
+- **Listar os contêineres em execução**:
+
+  ```sh
+  docker ps
+  ```
+
+- **Verificar os logs de um contêiner específico**:
+  ```sh
+  docker logs <nome_do_container>
+  ```
+
+### Executar o Projeto
+
+- **Rodar a aplicação Flask**:
+  ```sh
+  python run.py
+  ```
+
+### Variáveis de Ambiente
+
+Certifique-se de que o arquivo `.env` esteja configurado corretamente com as variáveis de ambiente necessárias:
+
+```env
+POSTGRES_USER=usuarioLocal
+POSTGRES_PASSWORD=senhaLocal
+POSTGRES_DB=bancoLocal
+POSTGRES_PORT=5432
+```
+
+### Instalar Dependências
+
+- **Instalar dependências do projeto**:
+  ```sh
+  pip install -r requirements.txt
+  ```
+
 ## Como Executar
 
 Para executar a aplicação, siga os passos abaixo:
 
 1. Instale as dependências:
 
+   ```sh
    pip install -r requirements.txt
+   ```
 
 2. Execute a aplicação:
-
+   ```sh
    python run.py
+   ```
+
+## Contribuição
+
+Esta documentação fornece uma visão geral da arquitetura do projeto, a estrutura de diretórios e comandos úteis para gerenciar os contêineres Docker e executar a aplicação. Certifique-se de seguir as instruções para configurar corretamente o ambiente de desenvolvimento.
