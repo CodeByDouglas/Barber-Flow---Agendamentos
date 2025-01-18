@@ -1,0 +1,17 @@
+version: "2.31.0"
+
+services:
+  db:
+    image: postgres:latest
+    container_name: postgres_container
+    environment:
+      POSTGRES_USER: usuarioLocal
+      POSTGRES_PASSWORD: senhaLocal
+      POSTGRES_DB: bancoLocal
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
