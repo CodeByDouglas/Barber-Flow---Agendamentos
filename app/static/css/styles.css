@@ -1,0 +1,41 @@
+*{
+    background-color: black;
+}
+@font-face {
+    font-family: 'Black Mustang';
+    src: url('static/font/Black Mustang.ttf') format('ttf');
+        
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    font-family: 'Black Mustang', sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+.container{
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+
+  
+}
+.logo{
+    height: 400px;
+    width: auto;
+    margin-bottom: 20px;
+}
+
+.agendar-button{
+    color: #d77604;
+    margin-top: 20px;
+
+    
+}

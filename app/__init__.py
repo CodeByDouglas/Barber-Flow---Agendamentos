@@ -1,5 +1,5 @@
 from flask import Flask 
-from controllers.routes import rotas_de_adm, rotas_de_agendamento
+from app.controllers.routes import rotas_de_adm, rotas_de_agendamento
 
 
 def create_app(): 
