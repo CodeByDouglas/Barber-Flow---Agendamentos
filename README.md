@@ -101,6 +101,33 @@ tests/
   python run.py
   ```
 
+### Gerenciar Migrations
+
+Para gerenciar as migrations do banco de dados, utilize os seguintes comandos:
+
+- **Inicializar as migrations** (caso ainda não tenha sido feito):
+
+  ```sh
+  flask db init
+  ```
+
+- **Criar uma nova migração**:
+
+  ```sh
+  flask db migrate -m "Descrição da migração"
+  ```
+
+- **Aplicar as migrations ao banco de dados**:
+
+  ```sh
+  flask db upgrade
+  ```
+
+- **Reverter as migrations**:
+  ```sh
+  flask db downgrade
+  ```
+
 ### Variáveis de Ambiente
 
 Certifique-se de que o arquivo `.env` esteja configurado corretamente com as variáveis de ambiente necessárias:
@@ -110,6 +137,7 @@ POSTGRES_USER=usuarioLocal
 POSTGRES_PASSWORD=senhaLocal
 POSTGRES_DB=bancoLocal
 POSTGRES_PORT=5432
+FLASK_APP=run.py
 ```
 
 ### Instalar Dependências
@@ -135,5 +163,9 @@ Para executar a aplicação, siga os passos abaixo:
    ```
 
 ## Contribuição
+
+Para contribuir com o projeto, siga as diretrizes de contribuição e faça um pull request com suas alterações.
+
+---
 
 Esta documentação fornece uma visão geral da arquitetura do projeto, a estrutura de diretórios e comandos úteis para gerenciar os contêineres Docker e executar a aplicação. Certifique-se de seguir as instruções para configurar corretamente o ambiente de desenvolvimento.
