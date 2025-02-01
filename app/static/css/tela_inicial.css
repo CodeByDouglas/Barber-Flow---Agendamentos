@@ -36,6 +36,13 @@ body {
 .agendar-button{
     color: #d77604;
     margin-top: 20px;
+    font-family: 'Black Mustang';
+    font-size: 40px;
+    border: none;
 
     
+}
+.agendar-button:hover{
+    color:#925004;
+    cursor: pointer;
 }

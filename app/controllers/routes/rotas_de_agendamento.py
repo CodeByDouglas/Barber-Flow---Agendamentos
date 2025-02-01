@@ -8,7 +8,7 @@ def tela_inicial():
 
 @bp.route('/agenda/funcionario')
 def selecionar_funcionario():
-    return "Selecionar Funcionário"
+    return render_template('tela_barbeiro.html')
 
 @bp.route('/agenda/funcionario/servico')
 def selecionar_servico():
