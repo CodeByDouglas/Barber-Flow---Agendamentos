@@ -147,6 +147,39 @@ FLASK_APP=run.py
   pip install -r requirements.txt
   ```
 
+## Configuração do Banco de Dados
+
+Caso exista a variável `DATABASE_URL` no arquivo `.env`, ela será utilizada como padrão para a conexão com o banco de dados de produção. Se ela não existir, serão utilizadas as seguintes variáveis para conectar ao banco de dados de desenvolvimento via Docker Compose local:
+
+```
+POSTGRES_USER=usuarioLocal
+POSTGRES_PASSWORD=senhaLocal
+POSTGRES_DB=bancoLocal
+POSTGRES_PORT=5432
+```
+
+### Acessando o Banco de Dados Local
+
+Para acessar o banco de dados local via Docker Compose, utilize o seguinte comando:
+
+```sh
+docker-compose exec -it db psql -U usuarioLocal -d bancoLocal
+```
+
+### Consultando e Modificando as Tabelas
+
+Para consultar os dados de uma tabela, execute:
+
+```sql
+SELECT * FROM "nome_da_tabela";
+```
+
+Para deletar registros de uma tabela, execute:
+
+```sql
+DELETE FROM "nome_da_tabela";
+```
+
 ## Como Executar
 
 Para executar a aplicação, siga os passos abaixo:
