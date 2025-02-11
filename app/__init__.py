@@ -16,7 +16,9 @@ def create_app():
     flask_app.register_blueprint(rotas_de_adm.bp)
     
     # Registra o blueprint da API
-    from app.controllers.api import api_create_hrs
+    from app.controllers.api import api_create_hrs, api_consulta_hrs
     flask_app.register_blueprint(api_create_hrs.bp_api)
+    flask_app.register_blueprint(api_consulta_hrs.bp_api)
+    
 
     return flask_app
