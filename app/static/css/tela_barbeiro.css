@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@font-face {
+    font-family: 'Brittany Coast';
+    src: url('static/font/Brittany Coast.otf') format('otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background-image: linear-gradient(to bottom, #1D1D1D,#000000);
+    background-attachment: fixed;
+    font-family: 'Montserrat';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+.title{
+
+    position: fixed;
+    top: -50px;
+    width: 500px;
+    height: 200px;
+    background-color: rgb(31, 29, 29);
+    border-radius: 400px;
+    display: flex;
+    align-items: flex-end;     /* Alinha o conteúdo (título) na parte inferior do quadrado */
+    justify-content: center;
+    margin-bottom: 0px;
+    
+}
+
+.title h1 {
+    color: #E5B817;
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: 100px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* Container dos cards:
+   - Ocupa 80% da largura da tela (ou 90% em telas pequenas)
+   - Tem um max-width para limitar a expansão em telas grandes */
+.barbers-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 0 auto;
+    width: 80%;
+    max-width: 800px;
+}
+
+/* Card com layout horizontal que permanece igual em qualquer tamanho de tela */
+.barber-card {
+    display: flex;
+    flex-direction: row;  /* Garante o layout horizontal */
+    align-items: center;
+    background-color: #E5B817;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.barber-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+/* Imagem fixa à esquerda */
+.barber-img {
+    width: 150px;
+    height: 150px;
+    
+    border-color: #1e1e1e;
+    object-fit: cover;
+    display: block;
+}
+
+/* Nome do barbeiro à direita */
+.barber-name {
+    font-weight: bold;
+    padding: 20px;
+    font-size: 35px;
+    color: black;
+    text-align: left;
+}
+
+/* Responsividade opcional (mantendo o layout horizontal) */
+@media (max-width: 480px) {
+    .barbers-container {
+        width: 90%;
+    }
+    
+    /* Se desejar, você pode ajustar levemente os tamanhos do texto */
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+    }
+    
+    .barber-name {
+        font-size: 1.5rem;
+        padding: 10px;
+    }
+}
