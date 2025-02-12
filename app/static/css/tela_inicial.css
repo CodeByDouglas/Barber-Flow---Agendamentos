@@ -1,48 +1,49 @@
-*{
-    background-color: black;
-}
+@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @font-face {
-    font-family: 'Black Mustang';
-    src: url('static/font/Black Mustang.ttf') format('ttf');
-        
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Brittany Coast";
+  src: url("static/font/Brittany Coast.otf") format("otf");
+  font-weight: normal;
+  font-style: normal;
 }
+
 body {
-    font-family: 'Black Mustang', sans-serif;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-
+  background-image: linear-gradient(to bottom, #1d1d1d, #000000);
+  background-attachment: fixed;
+  font-family: "Montserrat";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
 }
-.container{
-    height: 80%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
-
-  
+.container {
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.logo{
-    height: 400px;
-    width: auto;
-    margin-bottom: 20px;
+.logo {
+  height: 400px;
+  width: auto;
+  margin-bottom: 20px;
 }
 
-.agendar-button{
-    color: #d77604;
-    margin-top: 20px;
-    font-family: 'Black Mustang';
-    font-size: 40px;
-    border: none;
+.agendar-button {
+  background-color: #e5b817;
+  border: none;
+  border-radius: 8px;
+  color: black;
+  font-size: 35px;
 
-    
+  padding: 20px;
+  margin-top: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
-.agendar-button:hover{
-    color:#925004;
-    cursor: pointer;
+
+.agendar-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
 }
