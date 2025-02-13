@@ -16,7 +16,7 @@ def selecionar_funcionario():
 
 @bp.route('/agenda/funcionario/servico')
 def selecionar_servico():
-    return "Selecionar Serviço"
+    return render_template('tela_servicos.html')
 
 @bp.route('/agenda/funcionario/servico/data-hora')
 def selecionar_data_hora():
