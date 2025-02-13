@@ -1,0 +1,8 @@
+*{
+    background-color: pink;
+}
+.serviços {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* opcional, para espaçamento entre os botões */
+}
