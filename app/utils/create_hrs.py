@@ -4,11 +4,7 @@ from datetime import datetime, time, date
 from app.models import Horarios, Funcionarios
 
 def gerar_horarios_proximo_mes(admin_id):
-    # Verifica se hoje é o primeiro dia do mês
-    
     hoje = datetime.today()
-    if hoje.day != 1:
-        return "Hoje não é o primeiro dia do mês. Nenhum horário foi gerado."
 
     # Determina o próximo mês e o ano correspondente
     if hoje.month == 12:  # se for dezembro, próximo mês é janeiro do próximo ano
@@ -43,7 +39,7 @@ def gerar_horarios_proximo_mes(admin_id):
         # Itera sobre cada dia do próximo mês
         for dia in range(1, total_dias + 1):
             data_registro = date(ano_proximo, mes_proximo, dia)
-            # Cria registrjos para cada horário de 8h até 18h (inclusive)
+            # Cria registros para cada horário de 8h até 18h (inclusive)
             for hora in range(8, 19): 
                 horario_registro = time(hora, 0)
                 # Cria um registro para cada funcionário
