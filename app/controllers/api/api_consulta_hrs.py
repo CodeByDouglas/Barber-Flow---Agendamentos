@@ -9,9 +9,10 @@ def consulta_hrs():
     dia = request.args.get('dia', type=int)
     mes = request.args.get('mes', type=int)
     ano = request.args.get('ano', type=int)
+    admin_id = request.args.get('admin_id')
 
-    if None in (id_funcionario, dia, mes, ano):
-        return jsonify({'error': 'Os parâmetros "id", "dia", "mes" e "ano" são necessários.'}), 400
+    if None in (id_funcionario, dia, mes, ano, admin_id):
+        return jsonify({'error': 'Os parâmetros "id", "dia", "mes", "ano" e "admin_id" são necessários.'}), 400
 
-    horarios = consultar_horarios(id_funcionario, dia, mes, ano)
+    horarios = consultar_horarios(id_funcionario, dia, mes, ano, admin_id)
     return jsonify(horarios), 200

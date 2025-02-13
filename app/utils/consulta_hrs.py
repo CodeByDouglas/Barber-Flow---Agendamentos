@@ -2,12 +2,13 @@
 from datetime import date
 from app.models import Horarios
 
-def consultar_horarios(id_funcionario: int, dia: int, mes: int, ano: int):
+def consultar_horarios(id_funcionario: int, dia: int, mes: int, ano: int, admin_id: int):
     """Retorna uma lista de dicionários com os horários e sua disponibilidade."""
     data_consulta = date(ano, mes, dia)
     horarios = Horarios.query.filter(
         Horarios.id_funcionario == id_funcionario,
-        Horarios.data == data_consulta
+        Horarios.data == data_consulta,
+        Horarios.admin_id == admin_id
     ).all()
     
     resultado = []

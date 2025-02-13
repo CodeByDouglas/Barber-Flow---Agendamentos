@@ -14,6 +14,10 @@ def create_agendamento():
     if missing:
         return jsonify({'error': f'Faltando parâmetros: {", ".join(missing)}'}), 400
 
+    admin_id = data.get('admin_id')
+    if not admin_id:
+        return jsonify({'error': 'admin_id is required'}), 400
+
     # Verifica se o horário existe e não está preenchido
     horario = Horarios.query.get(data['id_horario'])
     if not horario:
@@ -27,13 +31,14 @@ def create_agendamento():
         id_servico=data['id_servico'],
         id_horario=data['id_horario'],
         nome_cliente=data['nome_cliente'],
-        telefone_cliente=data['telefone_cliente']
+        telefone_cliente=data['telefone_cliente'],
+        admin_id=admin_id
     )
     if isinstance(resultado, str):
         return jsonify({'error': resultado}), 500
 
     # Marca o horário como preenchido
-    status_msg = marcar_horario_preenchido(data['id_horario'])
+    status_msg = marcar_horario_preenchido(data['id_horario'], admin_id)
     if status_msg != "Horário atualizado com sucesso.":
         return jsonify({'error': status_msg}), 500
 
