@@ -1,48 +1,70 @@
-*{
-    background-color: black;
-}
-@font-face {
-    font-family: 'Black Mustang';
-    src: url('static/font/Black Mustang.ttf') format('ttf');
-        
-    font-weight: normal;
-    font-style: normal;
-}
-body {
-    font-family: 'Black Mustang', sans-serif;
+/* Reset básico */
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Estilização do body com degradê de fundo */
+body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-
+    background-image: linear-gradient(to bottom, #1D1D1D, #000000);
+    background-attachment: fixed;
 }
-.container{
-    height: 80%;
+
+/* Container principal centralizado */
+.container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    
-
-  
-}
-.logo{
-    height: 400px;
-    width: auto;
-    margin-bottom: 20px;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
 }
 
-.agendar-button{
-    color: #d77604;
-    margin-top: 20px;
-    font-family: 'Black Mustang';
-    font-size: 40px;
-    border: none;
-
-    
+/* Logo */
+.logo {
+    width: 500px;
+    margin-bottom: 40px;
 }
-.agendar-button:hover{
-    color:#925004;
+
+/* Botão Agendar com borda estilizada */
+.agendar-button {
+    background-color: #E5B817;
+    color: black;
+    border: 2px solid #E5B817;
+    padding: 12px 24px;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 8px;
     cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    width: 100%;
+    max-width: 250px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.agendar-button:hover {
+    background-color: #E5B817;
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    body{
+        height: 70%;
+    }
+    .logo {
+        width: 100%;
+    }
+    .agendar-button {
+        font-size: 25px;
+        padding: 10px 20px;
+    }
 }
