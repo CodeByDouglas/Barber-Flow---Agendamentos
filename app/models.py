@@ -4,8 +4,10 @@ class Administrador(db.Model):
     __tablename__ = 'Administrador'
 
     id_administrador = db.Column(db.Integer, primary_key=True)
-    nome = db.Column(db.String(100), nullable=False)
+    email= db.Column(db.String(100), nullable=False)
     senha = db.Column(db.String(100), nullable=False)
+    nome_barbearia = db.Column(db.String(100), nullable=False)
+    
 
 
 class Funcionarios(db.Model):
@@ -13,7 +15,8 @@ class Funcionarios(db.Model):
 
     id_funcionario = db.Column(db.Integer, primary_key=True)
     nome = db.Column(db.String(100), nullable=False)
-    senha = db.Column(db.String(100), nullable=False)
+    admin_id = db.Column(db.Integer, db.ForeignKey('Administrador.id_administrador'), nullable=False)
+    administrador = db.relationship('Administrador', backref='funcionarios')
 
 
 class Servicos(db.Model):
@@ -23,6 +26,8 @@ class Servicos(db.Model):
     nome_servico = db.Column(db.String(100), nullable=False)
     valor_servico = db.Column(db.Numeric(10, 2))
     tempo_servico = db.Column(db.Integer)
+    admin_id = db.Column(db.Integer, db.ForeignKey('Administrador.id_administrador'), nullable=False)
+    administrador = db.relationship('Administrador', backref='servicos')
 
 
 class Horarios(db.Model):
@@ -41,6 +46,8 @@ class Horarios(db.Model):
     )
 
     funcionario = db.relationship('Funcionarios', backref='horarios')
+    admin_id = db.Column(db.Integer, db.ForeignKey('Administrador.id_administrador'), nullable=False)
+    administrador = db.relationship('Administrador', backref='horarios')
 
 
 class Agendamentos(db.Model):
@@ -74,3 +81,5 @@ class Agendamentos(db.Model):
 
     nome_cliente = db.Column(db.String(100), nullable=False)
     telefone_cliente = db.Column(db.String(20), nullable=False)
+    admin_id = db.Column(db.Integer, db.ForeignKey('Administrador.id_administrador'), nullable=False)
+    administrador = db.relationship('Administrador', backref='agendamentos')
