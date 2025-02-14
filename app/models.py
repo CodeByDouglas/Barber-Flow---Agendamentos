@@ -71,13 +71,8 @@ class Agendamentos(db.Model):
     )
     servico = db.relationship('Servicos', backref='agendamentos')
 
-    # Relacionamento com Funcionarios
-    id_funcionario = db.Column(
-        db.Integer,
-        db.ForeignKey('Funcionarios.id_funcionario'),
-        nullable=False
-    )
-    funcionario = db.relationship('Funcionarios', backref='agendamentos')
+    
+    nome_funcionario = db.Column(db.String(100), nullable=False)
 
     nome_cliente = db.Column(db.String(100), nullable=False)
     telefone_cliente = db.Column(db.String(20), nullable=False)
