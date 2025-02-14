@@ -22,6 +22,6 @@ def selecionar_servico():
 def selecionar_data_hora():
     return "Selecionar Data e Hora"
 
-@bp.route('/agenda/funcionario/servico/data-hora/dado-cliente')
-def coleta_dados_cliente():
-    return "Coleta de Dados do Cliente"
+@bp.route('/agenda/funcionario/servico/data-hora/finalizar-agendamento')
+def finalizar_agendamento():
+    return render_template('tela_finalizar_agendamento.html')
