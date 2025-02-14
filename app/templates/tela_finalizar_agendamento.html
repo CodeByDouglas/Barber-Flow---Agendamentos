@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/css/tela_finalizar_agendamento.css">
+  <title>Finalizar Agendamento</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Estamos Quase Lá...</h1>
+    
+    <p><strong>Barbeiro:</strong> <span id="barbeiro"></span></p>
+    <p><strong>Serviços:</strong> <span id="servico"></span></p>
+    <p><strong>Horário:</strong> <span id="horario"></span></p>
+
+    <h2>Finalizar Agendamento:</h2>
+
+    <div class="campo">
+      <label for="nome">Qual seu nome?</label>
+      <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
+    </div>
+
+    <div class="campo">
+      <label for="telefone">Qual seu Telefone?</label>
+      <input type="text" id="telefone" name="telefone" placeholder="DDD + Telefone" maxlength="11">
+    </div>
+
+    <button onclick="enviarDados()">Finalizar Agendamento</button> 
+
+    <script>
+      // Bloquear entrada de letras no campo telefone
+      document.getElementById("telefone").addEventListener("input", function() {
+          this.value = this.value.replace(/\D/g, ""); // Remove tudo que não for número
+      });
+
+      function enviarDados() {
+          const nome = document.getElementById("nome").value;
+          const telefone = document.getElementById("telefone").value;
+
+          if (!nome || !telefone) {
+              alert("Por favor, preencha seu nome e telefone!");
+              return;
+          }
+
+          alert(`Agendamento Finalizado!\n
+              Nome: ${nome}
+              Telefone: ${telefone}
+              Barbeiro: ${document.getElementById("barbeiro").textContent}
+              Serviço: ${document.getElementById("servico").textContent}
+              Horário: ${document.getElementById("horario").textContent}
+          `);
+      }
+    </script>
+
+  </div>
+</body>
+</html>
