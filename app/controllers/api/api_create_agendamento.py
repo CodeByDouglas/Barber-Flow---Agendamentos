@@ -1,8 +1,8 @@
 # Python
 from flask import Blueprint, request, jsonify
-from app.models import Horarios  # [app/models.py](app/models.py)
+from app.models import Horarios  
 from app.utils.create_agendamento import criar_agendamento
-from app.utils.bloc_hrs import marcar_horario_preenchido  # [app/utils/bloc_hrs.py](app/utils/bloc_hrs.py)
+from app.utils.bloc_hrs import marcar_horario_preenchido  
 
 bp_api = Blueprint('api_create_agendamento', __name__, url_prefix='/api')
 

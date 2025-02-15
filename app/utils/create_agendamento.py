@@ -1,6 +1,6 @@
 # Python
 from app import db
-from app.models import Agendamentos
+from app.models import Agendamentos, Funcionarios
 
 def criar_agendamento(id_funcionario: int, id_servico: int, id_horario: int, nome_cliente: str, telefone_cliente: str, admin_id: int):
     """
@@ -18,8 +18,12 @@ def criar_agendamento(id_funcionario: int, id_servico: int, id_horario: int, nom
       Instância de Agendamentos ou mensagem de erro.
     """
     try:
+        # Recupera o funcionário para obter seu nome atual
+        funcionario = Funcionarios.query.get(id_funcionario)
+        
+        
         novo_agendamento = Agendamentos(
-            id_funcionario=id_funcionario,
+            nome_funcionario=funcionario.nome,  # Salva o nome atual do funcionário
             id_servico=id_servico,
             id_horario=id_horario,
             nome_cliente=nome_cliente,
