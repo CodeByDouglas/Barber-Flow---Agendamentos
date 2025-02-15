@@ -9,24 +9,19 @@ def consulta_hrs():
     if not data:
         return jsonify({'error': 'JSON body is required.'}), 400
 
+
+
     id_funcionario = data.get('id')
     dia = data.get('dia')
     mes = data.get('mes')
     ano = data.get('ano')
     admin_id = data.get('admin_id')
-    id_funcionario = request.args.get('id', type=int)
-    dia = request.args.get('dia', type=int)
-    mes = request.args.get('mes', type=int)
-    ano = request.args.get('ano', type=int)
-    admin_id = request.args.get('admin_id')
 
     if None in (id_funcionario, dia, mes, ano, admin_id):
         return jsonify({
             'error': 'Erro: Os parâmetros "id", "dia", "mes", "ano" e "admin_id" são necessários.'
         }), 400
-    if None in (id_funcionario, dia, mes, ano, admin_id):
-        return jsonify({'error': 'Os parâmetros "id", "dia", "mes", "ano" e "admin_id" são necessários.'}), 400
 
-    horarios = consultar_horarios(id_funcionario, dia, mes, ano, admin_id)
+
     horarios = consultar_horarios(id_funcionario, dia, mes, ano, admin_id)
     return jsonify(horarios), 200

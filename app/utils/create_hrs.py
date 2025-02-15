@@ -4,9 +4,7 @@ from datetime import datetime, time, date
 from app.models import Horarios, Funcionarios
 
 def gerar_horarios_proximo_mes(admin_id):
-def gerar_horarios_proximo_mes(admin_id):
-    # Verifica se hoje é o primeiro dia do mês
-    
+
     hoje = datetime.today()
 
     # Determina o próximo mês e o ano correspondente
@@ -53,8 +51,7 @@ def gerar_horarios_proximo_mes(admin_id):
                         preenchido=False,
                         id_funcionario=funcionario.id_funcionario,
                         admin_id=admin_id
-                        id_funcionario=funcionario.id_funcionario,
-                        admin_id=admin_id
+
                     )
                     db.session.add(registro)
                     total_registros += 1
