@@ -1,4 +1,5 @@
 from flask import Blueprint, request, jsonify
+from flask import Blueprint, request, jsonify
 from app.utils.create_hrs import gerar_horarios_proximo_mes
 import calendar
 from app import db
@@ -70,6 +71,7 @@ def gerar_horarios_proximo_mes(admin_id):
 
 bp_api = Blueprint('api_create_hrs', __name__, url_prefix='/api')
 
+@bp_api.route('/create-hrs', methods=['POST'])
 @bp_api.route('/create-hrs', methods=['POST'])
 def create_hrs():
     data = request.get_json()

@@ -28,8 +28,8 @@ body {
 
     position: fixed;
     top: -50px;
-    width: 500px;
-    height: 200px;
+    width: 400px;
+    height: 150px;
     background-color: rgb(31, 29, 29);
     border-radius: 400px;
     display: flex;
@@ -47,6 +47,7 @@ body {
     margin-bottom: 40px;
     text-align: center;
 }
+
 
 /* Container dos cards:
    - Ocupa 80% da largura da tela (ou 90% em telas pequenas)
